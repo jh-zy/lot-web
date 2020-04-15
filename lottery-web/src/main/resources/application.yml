@@ -1,0 +1,21 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: lottery-web
+grpc:
+  client:
+    lottery-service:
+      address: 'static://127.0.0.1:9090'
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      negotiationType: plaintext
+
+knife4j:
+  basic:
+      ## 开启Swagger的Basic认证功能,默认是false
+      enable: true
+      ### Basic认证用户名
+      username: sinodata
+      ### Basic认证密码
+      password: 123

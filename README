@@ -1,0 +1,50 @@
+本项目目的：
+1.收集测试项目可能用到的组件，统一组件和版本管理。根目录的pom.xml 里目前已经配置了部分组件
+2.java开发比较熟练的人员可以贡献代码，一起优化，本项目将来可以用作实际项目的模板
+3.java新人可以通过这个项目了解相关知识
+4.可以用做ci/cd流程实验的例子
+5.本项目的gitlab地址:http://39.98.169.191:8087/sinodata/lottery_archetype, 账户密码 sinodata abcd1234, 
+  大家可以在这里分享知识。
+
+本项目可以用于项目模板
+1.根目录的pom.xml 用于维护项目所需组件和版本管理，子模块的pom继承根目录的pom
+
+示例子模块:
+lottery-proto
+   grpc协议接口定义，自动编译对应的java包
+
+lottery-web
+   应用服务，对前端提供服务, 通过grpc客户端调用领域层服务lotter-service
+
+lottery-service
+   领域服务，处理来自grpc客户端的调用请求.
+
+
+运行示例
+  mvn clean package
+  终端运行lottery-service
+  java -jar lottery-service/target/lottery-service.jar
+  在另一个终端运行lottery-web
+  java -jar lottery-web/target/lottery-web.jar
+  访问lottery-web
+  curl 127.0.0.1:8090/user/byName
+  集成了swagger, 可以在网页上查看接口文档，测试接口
+  浏览器输入地址 http://127.0.0.1:8090/doc.html
+  浏览文档需要账号登录.用户名:sinodata 密码:123
+
+
+组件选型参考:
+    具体的组件版本可以看根目录下的pom.xml
+    1.数据库框架:mybatis-plus. mybatis的增强版，
+    可以不用写sql语句实现大部分的crud操作，需要定制优化的sql语句可以写在配置文件里，
+    文档资源：https://mybatis.plus/guide/
+
+    2.swagger，用接口文档自动生成,接口测试.
+      knife4j 提供文档工具的界面，工具默认访问页面路径为/doc.html
+
+    3.flowable, 工作流程组件
+
+    4.lcn, 分布式事务
+
+    5.lombok, 开发用的插件，免去写setter/getter等代码
+

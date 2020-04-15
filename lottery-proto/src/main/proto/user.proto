@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.sinodata.lottery.grpc.User";
+option java_outer_classname = "UserProto";
+
+service User {
+    rpc GetUserByName (UserRequest) returns (UserReply) {
+    }
+    rpc GetUserList (UserListRequest) returns (UserListReply) {
+    }
+}
+
+message UserRequest {
+    string name = 1;
+}
+
+message UserInfo {
+    string name = 1;
+    string address = 2;
+    string phone = 3;
+}
+
+message UserReply {
+    UserInfo user = 1;
+}
+
+message UserListRequest {
+    string name = 1;
+}
+
+message UserListReply {
+    repeated UserInfo user = 1;
+}
