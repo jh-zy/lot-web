@@ -246,8 +246,8 @@
       </resource>
     </resources>
     <pluginManagement>
-      <plugin>
-       <plugin>
+     <plugin>
+        <plugin>
           <groupId>org.jacoco</groupId>
              <artifactId>jacoco-maven-plugin</artifactId>
              <version>0.8.2</version>
@@ -277,15 +277,6 @@
             </executions>
         </plugin>
       </plugin> 
-      <plugins>
-        <plugin>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-maven-plugin</artifactId>
-          <configuration>
-             <fork>true</fork>
-          </configuration>
-        </plugin>
-      </plugins>
       <plugins>
         <plugin>
           <groupId>org.springframework.boot</groupId>
