@@ -17,7 +17,7 @@ spec:
       containers:
         - name: lottery-service-hcigop
           imagePullPolicy: IfNotPresent
-          image: registry.cn-hangzhou.aliyuncs.com/jhlinux/lottery_service:v1.0
+          image: registry.cn-hangzhou.aliyuncs.com/jhlinux/lottery_service:v3
       serviceAccount: default
       imagePullSecrets:
         - name: docker-secret
