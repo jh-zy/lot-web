@@ -68,7 +68,7 @@ spec:
       containers:
         - name: lottery-web-hcigop
           imagePullPolicy: IfNotPresent
-          image: registry.cn-hangzhou.aliyuncs.com/jhlinux/lottery_web:v1.0
+          image: registry.cn-hangzhou.aliyuncs.com/jhlinux/lottery_web:v3
           volumeMounts:
             - name: application-config
               mountPath: /config
